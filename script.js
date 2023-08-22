@@ -1,0 +1,1 @@
+console.log("Welcome to A3 Game Application");
