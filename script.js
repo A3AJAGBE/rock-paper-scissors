@@ -12,15 +12,16 @@ function game() {
 
     // This returns the player's play
     function getPlayerChoice() {
-        // Get the player's response and transform to lowercase
+         // Get the player's response and transform to lowercase
         let playerChoice = prompt("What's your play? ").toLowerCase();
 
-        if (OPTIONS.includes(playerChoice)) {
-            return playerChoice;
-        } else {
+        // This validates the player's response.
+        while(!(OPTIONS.includes(playerChoice))) {
             console.error("Wrong game option!!!");
+            playerChoice = prompt("Let's try this again. What's your play? ").toLowerCase();
         }
 
+        return playerChoice;
     }
 
     // This returns the current game round result
