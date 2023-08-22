@@ -37,4 +37,11 @@ function gameRound(playerSelection, computerSelection) {
 let pSelection = getPlayerChoice();
 let cSelection = getComputerChoice();
 let gameInfo = `You played "${pSelection}" and the computer played "${cSelection}"`;
-console.log(gameRound(pSelection, cSelection))
+
+
+function game() {
+    console.log(gameRound(pSelection, cSelection))
+}
+
+game();
+ 
