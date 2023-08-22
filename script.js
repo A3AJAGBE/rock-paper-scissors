@@ -17,7 +17,7 @@ function game() {
 
         // This validates the player's response.
         while(!(OPTIONS.includes(playerChoice))) {
-            console.error("Wrong game option!!!");
+            console.warn("Wrong game play!!!");
             playerChoice = prompt("Let's try this again. What's your play? ").toLowerCase();
         }
 
