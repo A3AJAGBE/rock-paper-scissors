@@ -1,16 +1,18 @@
 
 const OPTIONS = ["rock", "paper", "scissors"];
 
-const PLAY_ROUND = 5;
-let currentRound = 1;
-
+// This is the overall game function
 function game() {
+
+    // This returns the computer play
     function getComputerChoice() {
-    let randomSelection = OPTIONS[Math.floor(Math.random() * OPTIONS.length)];
-    return randomSelection;
+        let randomSelection = OPTIONS[Math.floor(Math.random() * OPTIONS.length)];
+        return randomSelection;
     }
 
+    // This returns the player's play
     function getPlayerChoice() {
+        // Get the player's response and transform to lowercase
         let playerChoice = prompt("What's your play? ").toLowerCase();
 
         if (OPTIONS.includes(playerChoice)) {
@@ -21,9 +23,8 @@ function game() {
 
     }
 
+    // This returns the current game round result
     function gameRound(playerSelection, computerSelection) {
-    
-        console.log(gameInfo);
 
         if (playerSelection == "rock" && computerSelection == "scissors") {
             return "Player Wins.";
@@ -41,22 +42,23 @@ function game() {
     let pSelection = getPlayerChoice();
     let cSelection = getComputerChoice();
     let gameInfo = `You played "${pSelection}" and the computer played "${cSelection}"`;
+
+    console.log(gameInfo);
     console.log(gameRound(pSelection, cSelection));
 }
 
-
+const PLAY_ROUND = 5;
+let currentRound = 1;
 let roundCompleted = false;
 
 while (!(roundCompleted)) {
     for (currentRound; currentRound <= PLAY_ROUND; currentRound++) {
         if (currentRound == 5) {
             console.log("This is the Final round");
-            game();
             roundCompleted = true;
         } else {
             console.log("This is round " + currentRound);
-            game();
-            
         }
+        game();
     }
 }
