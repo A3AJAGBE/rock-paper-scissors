@@ -1,17 +1,10 @@
-// console.log("Welcome to A3 Game Application");
 
 const OPTIONS = ["rock", "paper", "scissors"];
 
-let randomSelection = OPTIONS[Math.floor(Math.random() * OPTIONS.length)];
-
-// console.log(randomSelection);
-
-
 function getComputerChoice() {
+    let randomSelection = OPTIONS[Math.floor(Math.random() * OPTIONS.length)];
     return randomSelection;
 }
-
-getComputerChoice();
 
 function getPlayerChoice() {
     let playerChoice = prompt("What's your play? ").toLowerCase();
@@ -24,4 +17,24 @@ function getPlayerChoice() {
 
 }
 
-getPlayerChoice();
+function gameRound(playerSelection, computerSelection) {
+   
+    console.log(gameInfo);
+
+    if (playerSelection == "rock" && computerSelection == "scissors") {
+        return "Player Wins.";
+    } else if (playerSelection == "scissors" && computerSelection == "paper") {
+        return "Player Wins.";
+    } else if (playerSelection == "paper" && computerSelection == "rock") {
+        return "Player Wins.";
+    } else if (playerSelection === computerSelection) {
+        return "It's a draw."
+    } else {
+        return "You lose."
+    }
+}
+
+let pSelection = getPlayerChoice();
+let cSelection = getComputerChoice();
+let gameInfo = `You played "${pSelection}" and the computer played "${cSelection}"`;
+console.log(gameRound(pSelection, cSelection))
