@@ -53,6 +53,8 @@ let currentRound = 1;
 let roundCompleted = false;
 
 while (!(roundCompleted)) {
+    console.log("This application is automated to five (5) rounds per game.");
+
     for (currentRound; currentRound <= PLAY_ROUND; currentRound++) {
         if (currentRound == 5) {
             console.log("This is the Final round");
